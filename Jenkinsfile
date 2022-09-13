@@ -1,16 +1,16 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCOUNT_ID="CHANGE_ME"
-        AWS_DEFAULT_REGION="CHANGE_ME" 
-	CLUSTER_NAME="CHANGE_ME"
-	SERVICE_NAME="CHANGE_ME"
-	TASK_DEFINITION_NAME="CHANGE_ME"
-	DESIRED_COUNT="CHANGE_ME"
-        IMAGE_REPO_NAME="CHANGE_ME"
-        IMAGE_TAG="${env.BUILD_ID}"
+        AWS_ACCOUNT_ID="924034218347"
+        AWS_DEFAULT_REGION="af-south-1" 
+	CLUSTER_NAME="icasa-afs1-sit-cluster "
+	SERVICE_NAME="icasa-afs1-sit-service"
+	TASK_DEFINITION_NAME="icasa-afs1-sit-service"
+	DESIRED_COUNT="2"
+        IMAGE_REPO_NAME="icasa-afs1-sit-repo"
+        IMAGE_TAG= "latest"//"${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-	registryCredential = "CHANGE_ME"
+	registryCredential = "demo-admin-user"
     }
    
     stages {
