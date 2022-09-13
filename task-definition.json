@@ -1,9 +1,9 @@
 {
-    "family": FAMILY,
+    "family": "Linux",
     "containerDefinitions": [
         {
-            "image": "REPOSITORY_URI:BUILD_NUMBER",
-            "name": NAME,
+            "image": "924034218347.dkr.ecr.af-south-1.amazonaws.com/icasa-afs1-sit-repo:latest",
+            "name": "icasa-afs1-sit-task",
 	    "essential": true,
             "portMappings": [
                 {
@@ -19,5 +19,5 @@
              "FARGATE"
     ],
     "networkMode": "awsvpc",
-    "executionRoleArn": ROLE_ARN 
+    "executionRoleArn": "arn:aws:iam::924034218347:role/ecsTaskExecutionRoleicasa"
 }
