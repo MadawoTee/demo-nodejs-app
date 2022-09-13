@@ -5,7 +5,7 @@ pipeline {
         AWS_DEFAULT_REGION="af-south-1" 
 	CLUSTER_NAME="icasa-afs1-sit-cluster "
 	SERVICE_NAME="icasa-afs1-sit-service"
-	TASK_DEFINITION_NAME="icasa-afs1-sit-service"
+	TASK_DEFINITION_NAME="icasa-afs1-sit-task"
 	DESIRED_COUNT="2"
         IMAGE_REPO_NAME="icasa-afs1-sit-repo"
         IMAGE_TAG= "latest"//"${env.BUILD_ID}"
