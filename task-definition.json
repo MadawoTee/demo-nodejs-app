@@ -4,7 +4,7 @@
     "family": "Linux",
     "containerDefinitions": [
         {
-            "image": "924034218347.dkr.ecr.af-south-1.amazonaws.com/icasa-afs1-sit-repo:${env.BUILD_ID}",
+            "image": "924034218347.dkr.ecr.af-south-1.amazonaws.com/icasa-afs1-sit-repo:latest",
             "name": "icasa-afs1-sit-task",
 	    "essential": true,
             "portMappings": [
