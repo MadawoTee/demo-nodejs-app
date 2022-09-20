@@ -3,10 +3,10 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="924034218347"
         AWS_DEFAULT_REGION="af-south-1" 
-	CLUSTER_NAME="icasa-afs1-sit-cluster"
-	SERVICE_NAME="icasa-afs1-sit-service"
-	TASK_DEFINITION_NAME="icasa-afs1-sit-task"
-	DESIRED_COUNT="2"
+        CLUSTER_NAME="icasa-afs1-sit-cluster"
+        SERVICE_NAME="icasa-afs1-sit-service"
+        TASK_DEFINITION_NAME="icasa-afs1-sit-task"
+        DESIRED_COUNT="2"
         IMAGE_REPO_NAME="icasa-afs1-sit-repo"
         IMAGE_TAG= "latest"//"${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
@@ -44,7 +44,19 @@ pipeline {
          }
         }
       }
-      
+
+    //  // Uploading Docker images into AWS ECR
+    // stage('Gate Keeper Email For ApprovalR') {
+    //  steps{  
+    //      script {
+		// 	docker.withRegistry("https://" + REPOSITORY_URI, "ecr:${AWS_DEFAULT_REGION}:" + registryCredential) {
+    //                 	dockerImage.push()
+    //             	}
+    //      }
+    //     }
+    //   }
+
+    // Deploying to Fargate AWS ECS     
     stage('Deploy') {
      steps{
             withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
