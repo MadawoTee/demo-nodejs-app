@@ -8,7 +8,7 @@ pipeline {
         TASK_DEFINITION_NAME="icasa-afs1-sit-task"
         DESIRED_COUNT="2"
         IMAGE_REPO_NAME="icasa-afs1-sit-repo"
-        IMAGE_TAG= "latest"//"${env.BUILD_ID}"
+        IMAGE_TAG="${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
 	registryCredential = "demo-admin-user"
     }
